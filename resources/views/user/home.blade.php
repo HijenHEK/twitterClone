@@ -5,7 +5,8 @@
         <div>{{ session('status') }}</div>
     @endif
     <div class="t-container c f fc fst">
-        <header class="t-header">
+        <header class="t-header f js ac">
+        <img width="35px" src="{{asset('assets/icon.png')}}" alt="" srcset="">
             <div class="t-brand">Tweety</div>
 
 
@@ -49,6 +50,180 @@
                             <button class="btn btn-tweet" type="submit">Tweet it !</button>
                         </div>
                     </form>
+                    <div class="feed ">
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweet f as js">
+                            <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+                            <div class="t-content">
+                                <div class="name">
+                                    some guy
+                                </div>
+                                <div class="body">
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+                                </div>
+                                <div class="t-img f ac js">
+                                    <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+
+                                </div>
+                                <div class="react">
+                                    <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+                                    <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
             </section>
             <aside class="t-friends f fc ast js">
                 <h3>Friends</h3>
