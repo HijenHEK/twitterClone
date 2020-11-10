@@ -1,52 +1,60 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (session('status'))
-        <div>
-            {{ session('status') }}
-        </div>
-    @endif
+    <div class="container wf hf">
+            @if (session('status'))
+            <div class="status">
+                {{ session('status') }}
+            </div>
+             @endif
 
-    @if ($errors->any())
-        <div>
-            <div>{{ __('Whoops! Something went wrong.') }}</div>
 
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+        <form class="form c mt5" method="POST" action="{{ route('login') }}">
+            @csrf
 
-        <div>
-            <label>{{ __('Email') }}</label>
-            <input type="email" name="email" value="{{ old('email') }}" required autofocus />
-        </div>
+            <div class="group f ac jb">
+                <label  >{{ __('Email') }}</label>
+                <input class="control" type="email" name="email" value="{{ old('email') }}" required autofocus />
+            </div>
 
-        <div>
-            <label>{{ __('Password') }}</label>
-            <input type="password" name="password" required autocomplete="current-password" />
-        </div>
+            <div class="group f ac jb">
+                <label  >{{ __('Password') }}</label>
+                <input class="control" type="password" name="password" required autocomplete="current-password" />
+            </div>
 
-        <div>
-            <label>{{ __('Remember me') }}</label>
-            <input type="checkbox" name="remember">
-        </div>
+            <div class="group f ac js">
+                <label  >{{ __('Remember me') }}</label>
+                <input class="control" type="checkbox" name="remember">
+            </div>
 
-        @if (Route::has('password.request'))
-            <a href="{{ route('password.request') }}">
-                {{ __('Forgot your password?') }}
-            </a>
+            @if (Route::has('password.request'))
+                <div class="group f jc">
+                    <a class="link c" href="{{ route('password.request') }}">
+                        {{ __('Forgot your password?') }}
+                    </a>
+                </div>
+
+            @endif
+
+            <div class="group f jc">
+                <button class="btn btn-primary" type="submit">
+                {{ __('Login') }}
+                </button>
+            </div>
+        </form>
+
+
+        @if ($errors->any())
+            <div class="errors card c">
+                <div class="card-head">{{ __('Whoops! Something went wrong.') }}</div>
+
+                <ul class="card-body errors-list">
+                    @foreach ($errors->all() as $error)
+                        <li class="errors-item">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
-
-        <div>
-            <button type="submit">
-               {{ __('Login') }}
-            </button>
-        </div>
-    </form>
+    </div>
 @endsection

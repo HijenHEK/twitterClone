@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 2rem;
+}
+
+
+.mt5 {
+    margin-top: 5rem;
+}
+
+
+/**** FlexBox ****/
+.f {
+    display: flex;
+}
+.fc {
+    flex-direction: column;
+}
+.jc{
+    justify-content: center;
+}
+.ac {
+    align-items: center;
+}
+.js{
+    justify-content: start;
+}
+.as {
+    align-items: flex-start;
+}
+.je{
+    justify-content: end;
+}
+.ae {
+    align-items: flex-end;
+}
+.jb{
+    justify-content: space-between;
+}
+.ab {
+    align-items: space-between;
+}
+.ja{
+    justify-content: space-around;
+}
+.aa {
+    align-items:  space-around;
+}
+.jst{
+    justify-content: stretch;
+}
+.ast {
+    align-items:  stretch;
+}
+.hf {
+    height: 100%;
+}
+.wf {
+    width: 100%;
+}
+.c {
+    margin-left: auto;
+    margin-right: auto;
+}
+/********* fortify forms ************/
+
+
+/*errors*/
+
+
+
+.errors {
+    width: 350px;
+}
+.errors .errors-item{
+    color: rgb(218, 60, 60);
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+}
+/*form*/
+
+
+.form {
+    width: 350px;
+    padding: 1rem;
+    box-shadow: 0 0 2px 2px rgb(218, 218, 218);
+}
+
+.form .group {
+    padding: 0.5rem 0;
+}
+
+.form .group label {
+    margin-right: 0.5rem;
+}
+.form .group input {
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    background-color: rgb(242, 242, 242);
+}
+
+
+/**** buttons ****/
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    opacity: 0.85;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px rgb(208, 208, 208);
+    cursor: pointer;
+}
+.btn:active , .btn:hover  {
+    opacity: 1;
+    transform: scale(1.03);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+    background-color: rgb(14, 97, 185);
+    color: white;
+}
+
+
+
+.card {
+    border: 1px solid rgb(220, 220, 220);
+    box-shadow: 1px 1px 2px 1px rgb(208, 208, 208);
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-head {
+    font-weight: 500;
+}
+.card-body {
+    margin-top: 1rem;
+}
