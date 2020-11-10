@@ -21,6 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'home')
+Route::view('home', 'user.home')
 	->name('home')
 	->middleware(['auth', 'verified']);
