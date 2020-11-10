@@ -25,8 +25,12 @@ a {
 .mt5 {
     margin-top: 5rem;
 }
-
-
+.mb3 {
+    margin-bottom: 3rem;
+}
+.mb1 {
+    margin-bottom: 1rem;
+}
 /**** FlexBox ****/
 .f {
     display: flex;
@@ -144,7 +148,13 @@ a {
     color: white;
 }
 
-
+.btn-tweet {
+    background-color: rgb(57,196,249);
+    color: white;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
 
 .card {
     border: 1px solid rgb(220, 220, 220);
@@ -158,4 +168,121 @@ a {
 }
 .card-body {
     margin-top: 1rem;
+}
+
+
+/**tweety**/
+
+.t-container {
+    max-width: 1024px;
+    min-width: 400px;
+    height: 100%;
+    padding: 0.5rem;
+}
+.t-main {
+    height: 100%;
+    padding: 0rem 1rem;
+
+}
+.t-header {
+    width: 100%;
+    padding: 1rem 2rem;
+}
+
+.t-brand {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.t-nav  {
+    min-width: 150px;
+    padding: 0.5rem 1rem;
+
+}
+
+.t-nav .nav-links a {
+    font-weight: 500;
+    color: rgb(26, 26, 26);
+    padding: 0.2rem 0;
+    margin: 0.2rem 0;
+
+}
+.t-nav .nav-links a:hover {
+    font-weight: 500;
+    color: rgba(26, 26, 26, 0.7);
+}
+
+
+
+.t-feed {
+    flex: 1;
+    padding: 0 2rem;
+
+}
+
+.t-feed>* {
+    width: 100%;
+    max-width: 550px;
+
+}
+.t-feed form {
+    padding: 1rem;
+    box-shadow: 0 0 3px 1px rgb(180, 216, 255);
+    border-radius: 5px;
+}
+.t-feed .group {
+    width: 100%;
+}
+.t-feed .group-body textarea {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    margin-bottom: 0.5rem;
+    resize: none;
+    border-bottom: 2px solid rgb(180, 216, 255);
+
+}
+.t-feed .group-footer {
+    padding-top: 0.2rem;
+}
+
+.t-feed .group-footer img {
+    border-radius: 100%;
+}
+.t-friends {
+    min-width: 150px;
+
+    background-color: #F6F7FA;
+    border-radius: 5px;
+    padding: 0.2rem;
+}
+.t-friends h3 {
+    margin: 1rem 1rem 0rem 1rem;
+}
+.friend {
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    cursor: pointer;
+
+
+}
+.friend:hover {
+    background-color: #d3d5dc;
+
+}
+.friend img {
+    border-radius: 100%;
+    margin-right: 0.7rem;
+}
+.friend a {
+    color: rgb(26, 26, 26);
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+.friend:hover a {
+    color: rgba(26, 26, 26, 0.678);
+
 }
