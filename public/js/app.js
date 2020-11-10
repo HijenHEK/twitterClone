@@ -19343,6 +19343,11 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var e = document.querySelector("#menu-toggler");
+e.addEventListener("click", function () {
+  document.querySelector("#menu").classList.toggle("menu-active");
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

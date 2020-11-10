@@ -1,4 +1,4 @@
-<nav class="t-nav f fc ast ">
+<nav id="menu" class="t-nav f fc ast ">
 
     <div class="nav-links f fc js mb1">
         <a href="#">Home</a>
@@ -9,19 +9,23 @@
         <a href="#">Lists</a>
         <a href="#">Profile</a>
         <a href="#">More</a>
-    </div>
-
-    <button class="btn btn-tweet">Tweet a post</button>
 
     @auth
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
 
-        <button class="btn btn-logout" type="submit">
-            {{ __('Logout') }}
-        </button>
-    </form>
+
+    <button class="btn btn-tweet">Tweet a post</button>
+
+
+            <form class="f ac" method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <a class="nav-link" type="submit">
+                   Logout
+                </a>
+            </form>
+
+    </div>
 
     @endauth
 </nav>
