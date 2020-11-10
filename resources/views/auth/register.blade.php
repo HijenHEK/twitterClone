@@ -4,7 +4,7 @@
    <div class="container">
 
 
-        <form class="form" class="c mt5" method="POST" action="{{ route('register') }}">
+        <form class="form c mt5" method="POST" action="{{ route('register') }}">
             @csrf
 
             <div class="group f jb ac">
