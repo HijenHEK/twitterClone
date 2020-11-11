@@ -43,7 +43,8 @@ class User extends Authenticatable
 
 
     public function timeline(){
-        return Tweet::where('user_id',$this->id)->latest()->get() ;
+        $tweets = [...$this->followingTweets() , ...$this->tweets] ;
+        return collect($tweets)->sortByDesc('created_at') ;
     }
     public function getAvatarAttribute(){
         return "https://i.pravatar.cc/40?u=" . $this->email ;
@@ -59,5 +60,9 @@ class User extends Authenticatable
     }
     public function follow(User $user) {
         $this->follows()->save($user);
+    }
+    public function followingTweets() {
+        return $this->follows->map->tweets->flatten()->all() ;
+
     }
 }
