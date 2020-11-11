@@ -9,7 +9,7 @@
         <div class="cover-content f fc ac">
             <div class="user-info f ae jb">
                 <div class="user-name f fc">
-                    <a href="/users/{{$user->id}}">
+                    <a href="/users/{{$user->uname}}">
                         {{$user->name}}
 
                     </a>

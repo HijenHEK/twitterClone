@@ -46,6 +46,7 @@ a ,a:visited {
 
 .container {
     padding: 2rem;
+
 }
 
 
@@ -152,6 +153,10 @@ a ,a:visited {
     background-color: rgb(242, 242, 242);
 }
 
+.form .link {
+    color: rgb(14, 97, 185);
+    padding: 0.1rem 1rem;
+}
 
 /**** buttons ****/
 
@@ -174,6 +179,13 @@ button , a {
     border-radius: 5px;
     box-shadow: 1px 1px 2px 1px rgb(208, 208, 208);
     cursor: pointer;
+}
+.btn-auth {
+    background-color: rgb(57,196,249);
+    color: white;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem ;
 }
 .btn:active , .btn:hover  {
     opacity: 1;

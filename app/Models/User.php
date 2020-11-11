@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'uname',
         'password',
     ];
 
@@ -41,6 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function getRouteKey()
+    {
+        return 'uname' ;
+    }
 
     public function timeline(){
 

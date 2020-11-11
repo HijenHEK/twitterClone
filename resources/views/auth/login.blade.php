@@ -10,7 +10,7 @@
 
 
 
-        <form class="form c mt5" method="POST" action="{{ route('login') }}">
+        <form class="form c" method="POST" action="{{ route('login') }}">
             @csrf
 
             <div class="group f ac jb">
@@ -36,12 +36,17 @@
                 </div>
 
             @endif
-
             <div class="group f jc">
-                <button class="btn btn-primary" type="submit">
+                <a class="link c" href="/register">
+                    New here ? Sign up
+                </a>
+            </div>
+            <div class="group f jc">
+                <button class="btn btn-auth" type="submit">
                 {{ __('Login') }}
                 </button>
             </div>
+
         </form>
 
 

@@ -20,11 +20,17 @@
             @include ('_header')
 
             <main class="t-main f as ">
+                @auth
                 @include('_nav')
+
+                @endauth
 
                     @yield('content')
 
-                @include('_friends')
+                @auth
+                    @include('_friends')
+
+                @endauth
             </main>
 
         </div>

@@ -7,7 +7,7 @@
         <a class="nav-link" href="#">Messages</a>
         <a class="nav-link" href="#">Bookmarks</a>
         <a class="nav-link" href="#">Lists</a>
-        <a class="nav-link" href="/users/{{Auth::user()->id}}">Profile</a>
+        <a class="nav-link" href="/users/{{Auth::user()->uname}}">Profile</a>
 
         @auth
 
