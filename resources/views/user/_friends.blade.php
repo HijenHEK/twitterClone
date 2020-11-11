@@ -1,14 +1,14 @@
 <aside class="t-friends f fc ast js">
-    <h3>Friends</h3>
+    <h3>Following</h3>
 
-        @for ($i = 0; $i < 9; $i++)
+        @foreach (auth()->user()->follows as $user)
 
         <div class="friend">
-            <img src="https://i.pravatar.cc/30" alt="" srcset="">
-            <a href="#">some name</a>
+            <img src={{$user->avatar}} width="35px" alt="" srcset="">
+            <a href="#">{{$user->name}}</a>
         </div>
 
-        @endfor
+        @endforeach
 
 
 
