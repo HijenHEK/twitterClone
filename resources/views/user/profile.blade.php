@@ -1,31 +1,12 @@
-@extends('layouts.app')
 
-@section('content')
-    @if (session('status'))
-        <div>{{ session('status') }}</div>
-    @endif
+@extends('user.home')
 
-    <div>You are logged in!</div>
+@section('main')
+<section class="t-feed f fc ac ">
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
+    @include('user._t-form')
 
-        <button type="submit">
-            {{ __('Logout') }}
-        </button>
-    </form>
+</section>
 
-    <hr>
-
-    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updateProfileInformation()))
-        @include('profile.update-profile-information-form')
-    @endif
-
-    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-        @include('profile.update-password-form')
-    @endif
-
-    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::twoFactorAuthentication()))
-        @include('profile.two-factor-authentication-form')
-    @endif
 @endsection
+

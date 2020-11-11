@@ -10,7 +10,7 @@
         <main class="t-main f as ">
             @include('user._nav')
 
-            @include('user._feed')
+            @yield('main')
 
             @include('user._friends')
         </main>
