@@ -56,6 +56,9 @@ class User extends Authenticatable
     public function getAvatarAttribute(){
         return "https://i.pravatar.cc/40?u=" . $this->email ;
     }
+    public function getCoverAttribute(){
+        return "https://i.pravatar.cc/400?u=" . $this->email . 'x' ;
+    }
 
     public function tweets() {
         return $this->hasMany(Tweet::class);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TweetController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
@@ -28,6 +29,7 @@ Route::get('/', function () {
 Route::post('tweets',[TweetController::class ,'store'])->middleware('auth');
 Route::get('tweets',[TweetController::class,'index'])->name('home')
                                                     ->middleware(['auth', 'verified']);
+Route::get('users/{user}',[UserController::class,'show'])->name('profile');
 
 
 

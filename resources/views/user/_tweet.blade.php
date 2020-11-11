@@ -3,7 +3,10 @@
 
     <div class="t-content">
         <div class="name">
-            {{$tweet->user->name}}
+            <a href="/users/{{$tweet->user->id}}">
+                {{$tweet->user->name}}
+
+            </a>
 
         </div>
         <div class="body">
