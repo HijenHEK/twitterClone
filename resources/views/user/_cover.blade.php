@@ -22,10 +22,26 @@
 
                 <div class="user-param f ac">
                     @if (Auth::user()->id == $user->id)
-                        <button class="btn btn-grey">Edit</button>
+                        <button class="btn btn-grey">
+                            <a href="/users/edit">
+                                Edit
+                            </a>
+                        </button>
 
                     @else
-                        <button class="btn btn-tweet">Follow Me!</button>
+
+                        @if (Auth::user()->following($user))
+                            <form action="/unfollow/{{$user->id}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-tweet-red">Unfollow Me</button>
+                            </form>
+                        @else
+                            <form action="/follow/{{$user->id}}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-tweet">Follow Me!</button>
+                            </form>
+                        @endif
+
 
                     @endif
 

@@ -30,6 +30,8 @@ Route::post('tweets',[TweetController::class ,'store'])->middleware('auth');
 Route::get('tweets',[TweetController::class,'index'])->name('home')
                                                     ->middleware(['auth', 'verified']);
 Route::get('users/{user}',[UserController::class,'show'])->name('profile');
+Route::post('follow/{user}',[UserController::class, 'follow'])->middleware('auth');
+Route::post('unfollow/{user}',[UserController::class, 'unfollow'])->middleware('auth');
 
 
 

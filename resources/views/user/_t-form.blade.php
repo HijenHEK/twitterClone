@@ -1,4 +1,4 @@
-<form  class="" method="POST" action="/tweets">
+<form class="t-form" class="" method="POST" action="/tweets">
     @csrf
     <div class="group-body">
         <textarea id="tweetInput" name="tweet" id="" placeholder="What's on your mind ?"></textarea>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -33,9 +34,15 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function follow(User $user)
     {
-        //
+        Auth::user()->follow($user);
+        return back();
+    }
+    public function unfollow(User $user)
+    {
+        Auth::user()->unfollow($user);
+        return back();
     }
 
     /**
