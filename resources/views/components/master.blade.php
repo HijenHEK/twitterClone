@@ -13,32 +13,17 @@
 
 <body>
 
+
     @if (session('status'))
-        <div>{{ session('status') }}</div>
+    <div>{{ session('status') }}</div>
     @endif
-        <div id="tweet" class="t-container c f fc fst">
-            @include ('_header')
+    <div id="tweet" class="t-container c f fc fst">
+        @include ('_header')
 
-            <main class="t-main f as ">
-                @auth
-                @include('_nav')
-
-                @endauth
-
-                    @yield('content')
-
-                @auth
-                    @include('_friends')
-
-                @endauth
-            </main>
-
-        </div>
+    {{ $slot }}
 
 
-
-
-
+    </div>
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 

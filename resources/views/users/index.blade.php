@@ -1,7 +1,8 @@
 
-@extends('layouts.app')
 
-@section('content')
+<x-app>
+
+
 <section class="t-feed f fc ac ">
 
 
@@ -18,5 +19,5 @@
     ])
 </section>
 
-@endsection
+</x-app>
 

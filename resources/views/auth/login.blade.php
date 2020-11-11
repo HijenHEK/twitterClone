@@ -1,6 +1,5 @@
-@extends('layouts.app')
+<x-master>
 
-@section('content')
     <div class="container wf hf">
             @if (session('status'))
             <div class="status">
@@ -62,4 +61,5 @@
             </div>
         @endif
     </div>
-@endsection
+
+</x-master>
