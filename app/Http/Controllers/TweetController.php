@@ -22,4 +22,11 @@ class TweetController extends Controller
         ]);
         return back() ;
     }
+    public  function index()
+    {
+
+        return view('user.home',[
+            'tweets' => Auth::user()->timeline()
+        ]);
+    }
 }

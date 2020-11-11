@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\TweetController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +24,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home', 'user.home')
-	->name('home')
-	->middleware(['auth', 'verified']);
+
+Route::post('tweet',[TweetController::class ,'store'])->middleware('auth');
+Route::get('home',[TweetController::class,'index'])->name('home')
+                                                    ->middleware(['auth', 'verified']);
+
+
+

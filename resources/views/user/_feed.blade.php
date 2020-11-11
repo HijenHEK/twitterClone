@@ -2,10 +2,12 @@
     @include('user._t-form')
     <div class="feed">
 
-        @for ($i = 0; $i < 5; $i++)
+        @foreach ($tweets as $tweet)
             @include('user._tweet')
 
-        @endfor
+        @endforeach
+
+
 
 
     </div>

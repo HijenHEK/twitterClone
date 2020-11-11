@@ -1,14 +1,16 @@
 <div class="tweet f as js">
-    <img class="t-avatar" src="https://i.pravatar.cc/40" alt="">
+    <img class="t-avatar" src={{$tweet->user->avatar}} alt="">
+
     <div class="t-content">
         <div class="name">
-            some guy
+            {{$tweet->user->name}}
+
         </div>
         <div class="body">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora fugiat autem asperiores veritatis ea impedit perferendis natus ab temporibus odit, ipsum ullam, esse consequatur!
+            {{$tweet->body}}
         </div>
         <div class="t-img f ac js">
-            <img src="https://i.pravatar.cc/250"  width="100%" alt="">
+            <img src={{$tweet->image}}  width="100%" alt="">
 
         </div>
         <div class="react">
