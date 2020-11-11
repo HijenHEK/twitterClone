@@ -8,16 +8,16 @@
 
         <div class="cover-content f fc ac">
             <div class="user-info f ae jb">
-                <div class="user-name f fc">
-                    <a href="/users/{{$user->uname}}">
-                        {{$user->name}}
 
-                    </a>
+                <a class="user-name f fc" href="/users/{{$user->uname}}">
+
+                    <div>{{$user->name}}</div>
+
                     <small>
-                        Webdev
+                       {{$user->uname}}
                     </small>
+                </a>
 
-                </div>
                 <img class="user-avatar" src={{$user->profileAvatar}} />
 
                 <div class="user-param f ac je">
