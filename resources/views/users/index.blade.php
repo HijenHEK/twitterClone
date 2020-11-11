@@ -1,19 +1,19 @@
 
-@extends('user.home')
+@extends('layouts.app')
 
-@section('main')
+@section('content')
 <section class="t-feed f fc ac ">
 
 
-    @include('user._cover')
+    @include('_cover')
 
     @auth
         @if(Auth::user()->id == $user->id)
-            @include('user._t-form')
+            @include('_t-form')
         @endif
     @endauth
 
-    @include('user._feed' , [
+    @include('_feed' , [
         'tweets' => $user->tweets()->latest()->get()
     ])
 </section>

@@ -53,7 +53,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        return view('user.profile' , [
+        return view('users.index' , [
             'user' => $user
         ]);
     }

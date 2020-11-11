@@ -25,7 +25,7 @@ class TweetController extends Controller
     public  function index()
     {
 
-        return view('user.timeline',[
+        return view('tweets.index',[
             'tweets' => auth()->user()->timeline()
         ]);
     }

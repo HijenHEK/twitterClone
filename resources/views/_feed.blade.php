@@ -2,7 +2,7 @@
     <div class="feed">
 
         @foreach ($tweets as $tweet)
-            @include('user._tweet')
+            @include('_tweet')
 
         @endforeach
 
