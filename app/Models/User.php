@@ -43,6 +43,13 @@ class User extends Authenticatable
 
 
     public function timeline(){
+
+        $following = $this->follows()->pluck('id') ;
+        return Tweet::whereIn('user_id', $following)
+                    ->orWhere('user_id', $this->id)
+                    ->latest()
+                    ->get();
+
         $tweets = [...$this->followingTweets() , ...$this->tweets] ;
         return collect($tweets)->sortByDesc('created_at') ;
     }
