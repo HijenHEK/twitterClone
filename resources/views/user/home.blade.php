@@ -4,7 +4,7 @@
     @if (session('status'))
         <div>{{ session('status') }}</div>
     @endif
-    <div class="t-container c f fc fst">
+    <div id="tweet" class="t-container c f fc fst">
         @include ('user._header')
 
         <main class="t-main f as ">

@@ -14,7 +14,7 @@
 
 
 
-    <button class="btn btn-tweet">Tweet a post</button>
+    <button id="tweetBtn" class="btn btn-tweet" >Tweet a post</button>
 
 
             <form class="f ac" method="POST" action="{{ route('logout') }}">
