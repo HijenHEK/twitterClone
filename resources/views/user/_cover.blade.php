@@ -18,11 +18,11 @@
                     </small>
 
                 </div>
-                <img class="user-avatar" src={{$user->avatar}} />
+                <img class="user-avatar" src={{$user->profileAvatar}} />
 
-                <div class="user-param f ac">
+                <div class="user-param f ac je">
                     @if (Auth::user()->id == $user->id)
-                        <button class="btn btn-grey">
+                        <button class="btn user-btn btn-grey">
                             <a href="/users/edit">
                                 Edit
                             </a>
@@ -33,12 +33,12 @@
                         @if (Auth::user()->following($user))
                             <form action="/unfollow/{{$user->id}}" method="post">
                                 @csrf
-                                <button type="submit" class="btn btn-tweet-red">Unfollow Me</button>
+                                <button type="submit" class="btn user-btn btn-tweet-red">Unfollow Me</button>
                             </form>
                         @else
                             <form action="/follow/{{$user->id}}" method="post">
                                 @csrf
-                                <button type="submit" class="btn btn-tweet">Follow Me!</button>
+                                <button type="submit" class="btn user-btn btn-tweet">Follow Me!</button>
                             </form>
                         @endif
 
