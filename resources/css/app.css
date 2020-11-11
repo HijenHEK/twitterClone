@@ -279,6 +279,7 @@ button , input {
     margin : 0.5rem 1rem 0.5rem 0.5rem
 }
 .tweet .t-content{
+    width: 100%;
     padding-top: 1rem;
     padding-right: 1rem;
 }
