@@ -14,11 +14,11 @@ class TweetController extends Controller
     public  function store()
     {
         Request()->validate([
-            'body' => 'required|max:255'
+            'tweet' => 'required|max:255'
         ]);
         Tweet::create([
             'user_id' => Auth::user()->id ,
-            'body' => request('body')
+            'body' => request('tweet')
         ]);
         return back() ;
     }

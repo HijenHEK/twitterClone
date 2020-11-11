@@ -20,9 +20,9 @@
             <form class="f ac" method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <a class="nav-link" type="submit">
+                <button class="nav-link" type="submit">
                    Logout
-                </a>
+                </button>
             </form>
 
     </div>

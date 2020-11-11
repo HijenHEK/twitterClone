@@ -25,8 +25,8 @@ Route::get('/', function () {
 });
 
 
-Route::post('tweet',[TweetController::class ,'store'])->middleware('auth');
-Route::get('home',[TweetController::class,'index'])->name('home')
+Route::post('tweets',[TweetController::class ,'store'])->middleware('auth');
+Route::get('tweets',[TweetController::class,'index'])->name('home')
                                                     ->middleware(['auth', 'verified']);
 
 
