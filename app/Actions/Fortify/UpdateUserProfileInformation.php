@@ -23,7 +23,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'uname' => ['required', 'string', 'max:255' , 'alpha_dash', Rule::unique('users')->ignore($user)],
-
+            'old_password' => ['required'],
             'email' => [
                 'required',
                 'string',
@@ -33,19 +33,27 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
         ])->validate();
 
-        if(Hash::check($input['password'] ,$user->password )) {
-                if ($input['email'] !== $user->email &&
+        // ddd(Hash::check($input['old_password'] , $user->password));
+        if( Hash::check($input['old_password'] , $user->password )) {
+
+            if ($input['email'] !== $user->email &&
                 $user instanceof MustVerifyEmail) {
+
                     $this->updateVerifiedUser($user, $input);
+
                 } else {
                     $user->forceFill([
                         'name' => $input['name'],
+                        'uname' => $input['uname'],
                         'email' => $input['email'],
                     ])->save();
                 }
+
         } else {
-            return back()->withErrors(['password'=>'verify your password']);
+            return back()->withErrors(['old_password'=>'verify your password']);
+
         }
+        return redirect($user->path('edit'))->with(['profile-update'=>'Profile updated successfully !']);
 
     }
 
@@ -60,6 +68,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         $user->forceFill([
             'name' => $input['name'],
+            'uname' => $input['uname'],
             'email' => $input['email'],
             'email_verified_at' => null,
         ])->save();

@@ -9,7 +9,7 @@
     </div>
     @error('tweet')
         <div class="errors">
-           <div class="errors-item">
+           <div class="error">
             {{$message}}
             </div>
         </div>

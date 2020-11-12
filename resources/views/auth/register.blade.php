@@ -49,7 +49,7 @@
 
                 <ul class="card-body  ">
                     @foreach ($errors->all() as $error)
-                        <li class="errors-item">{{ $error }}</li>
+                        <li class="error">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>

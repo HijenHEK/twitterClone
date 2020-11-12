@@ -121,15 +121,23 @@ a ,a:visited {
 /********* fortify forms ************/
 
 
-/*errors*/
+/*messages*/
 
-
+.msgs {
+    width: 400px;
+    text-align: center;
+}
+.msg-success{
+    color: rgb(92, 218, 60);
+    padding: 0.2rem 0;
+    font-size: 0.8rem;
+}
 
 .errors {
     width: 400px;
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
 }
-.errors .errors-item{
+.error{
     color: rgb(218, 60, 60);
     padding: 0.2rem 0;
     font-size: 0.8rem;

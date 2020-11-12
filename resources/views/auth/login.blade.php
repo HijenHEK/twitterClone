@@ -53,9 +53,9 @@
             <div class="errors card c">
                 <div class="card-head">{{ __('Whoops! Something went wrong.') }}</div>
 
-                <ul class="card-body errors-list">
+                <ul class="card-body ">
                     @foreach ($errors->all() as $error)
-                        <li class="errors-item">{{ $error }}</li>
+                        <li class="error">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>
