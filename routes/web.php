@@ -23,7 +23,7 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 Fortify::viewPrefix('auth.');
 
-Route::group(['aut'], function () {
+Route::middleware(['auth'])->group( function () {
     Route::get('/',[TweetController::class,'index']);
     Route::post('tweets',[TweetController::class ,'store']);
     Route::get('tweets',[TweetController::class,'index'])->name('home');
