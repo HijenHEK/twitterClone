@@ -1,4 +1,4 @@
-<form class="form" method="POST" action="{{ route('user-profile-information.update') }}">
+<form class="form tsm" method="POST" action="{{ route('user-profile-information.update') }}">
     @csrf
     @method('PUT')
 
@@ -52,7 +52,7 @@
     </div>
     @enderror
     <div class="group f ac jb">
-        <button class="btn btn-auth" type="submit">
+        <button class="btn btn-auth tsm" type="submit">
             {{ __('Update Profile') }}
         </button>
 

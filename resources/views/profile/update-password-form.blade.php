@@ -1,4 +1,4 @@
-<form class="form " method="POST" action="{{ route('user-password.update') }}">
+<form class="form tsm" method="POST" action="{{ route('user-password.update') }}">
     @csrf
     @method('PUT')
     @if(session()->has('password-update'))
@@ -39,7 +39,7 @@
     </div>
     @enderror
     <div class="group f ac jb">
-        <button class="btn btn-auth" type="submit">
+        <button class="btn btn-auth tsm" type="submit">
             {{ __('Save') }}
         </button>
 

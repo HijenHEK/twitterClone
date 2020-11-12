@@ -118,6 +118,10 @@ a ,a:visited {
 .tc {
     text-align: center;
 }
+
+.tsm {
+    font-size: 0.9rem !important;
+}
 /********* fortify forms ************/
 
 
