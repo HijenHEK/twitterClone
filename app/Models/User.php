@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\Followable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable , Followable ;
 
     /**
      * The attributes that are mass assignable.
@@ -55,9 +55,10 @@ class User extends Authenticatable
                     ->latest()
                     ->get();
 
-        $tweets = [...$this->followingTweets() , ...$this->tweets] ;
-        return collect($tweets)->sortByDesc('created_at') ;
+        // $tweets = [...$this->followingTweets() , ...$this->tweets] ;
+        // return collect($tweets)->sortByDesc('created_at') ;
     }
+
     public function getAvatarAttribute(){
         return "https://i.pravatar.cc/40?u=" . $this->email ;
     }
@@ -73,20 +74,4 @@ class User extends Authenticatable
     }
 
 
-    public function follows() {
-        return $this->belongsToMany(User::class , 'follows' , 'user_id' , 'following_user_id');
-    }
-    public function following($user) {
-        return $this->follows->contains($user);
-    }
-    public function follow(User $user) {
-        $this->follows()->save($user);
-    }
-    public function unfollow(User $user) {
-        $this->follows()->detach($user);
-    }
-    public function followingTweets() {
-        return $this->follows->map->tweets->flatten()->all() ;
-
-    }
 }

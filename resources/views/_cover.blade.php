@@ -1,5 +1,5 @@
 
-    <div class="cover   ">
+    <div class="cover">
 
     <div class="cover-thumb f ac">
 
@@ -30,17 +30,16 @@
 
                     @else
 
-                        @if (Auth::user()->following($user))
-                            <form action="/unfollow/{{$user->id}}" method="post">
-                                @csrf
-                                <button type="submit" class="btn user-btn btn-tweet-red">Unfollow Me</button>
-                            </form>
-                        @else
+
+
                             <form action="/follow/{{$user->id}}" method="post">
                                 @csrf
-                                <button type="submit" class="btn user-btn btn-tweet">Follow Me!</button>
+                                <button type="submit"
+                                        class="btn user-btn {{Auth::user()->following($user) ? 'btn-tweet-red' : 'btn-tweet'}} ">
+                                        {{Auth::user()->following($user) ? 'Unfollow Me' : 'Follow Me'}}
+                                </button>
                             </form>
-                        @endif
+
 
 
                     @endif

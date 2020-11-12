@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\TweetController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -19,19 +20,14 @@ use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 */
 
 
+
 Fortify::viewPrefix('auth.');
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['aut'], function () {
+    Route::get('/',[TweetController::class,'index']);
+    Route::post('tweets',[TweetController::class ,'store']);
+    Route::get('tweets',[TweetController::class,'index'])->name('home');
+    Route::get('users/{user:uname}',[UserController::class,'show'])->name('profile');
+    Route::post('follow/{user}',[FollowController::class, 'store']);
 });
-
-
-Route::post('tweets',[TweetController::class ,'store'])->middleware('auth');
-Route::get('tweets',[TweetController::class,'index'])->name('home')
-                                                    ->middleware(['auth', 'verified']);
-Route::get('users/{user:uname}',[UserController::class,'show'])->name('profile');
-Route::post('follow/{user}',[UserController::class, 'follow'])->middleware('auth');
-Route::post('unfollow/{user}',[UserController::class, 'unfollow'])->middleware('auth');
-
-
 
