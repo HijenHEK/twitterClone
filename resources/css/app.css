@@ -342,7 +342,7 @@ button , a {
 }
 .t-feed .group-body textarea {
     width: 100%;
-    height: 2.5rem;
+    height: 4rem;
     padding: 0.5rem;
     border: none;
     outline: none;
@@ -355,11 +355,11 @@ button , a {
 
         display: none;
     }
-.t-feed .group-body textarea:focus {
+/* .t-feed .group-body textarea:focus {
     height: 5.5rem;
     transition: all 0.1s ease-in-out;
 
-}
+} */
 
 .t-feed .group-footer {
     padding-top: 0.5rem;
@@ -421,20 +421,20 @@ button , a {
 .tweet .t-content .react .like{
 }
 .t-friends {
-    max-width: 200px;
-    min-width: 185px;
+    min-width: 11rem;
+    font-size: 0.9rem;
     background-color: #F6F7FA;
     border-radius: 5px;
-    padding: 0.2rem 0rem;
     position: sticky;
     top: 2rem;
     right: 0;
+
 }
 .t-friends h3 {
-    margin: 1rem 1rem 0rem 1rem;
+    margin: 1rem;
 }
 .friend {
-    padding: 0.3rem 1.2rem;
+    padding: 0.3rem 0.5rem;
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -445,16 +445,14 @@ button , a {
 
 }
 .friend img {
-    width: 45px;
-    margin-right: 0.7rem;
+    width: 35px;
+    margin-right: 0.5rem;
 }
 .friend a {
     color: rgb(26, 26, 26);
-    font-weight: 400;
-    font-size: 0.9rem;
 }
 .friend:hover a {
-    color: rgba(26, 26, 26, 0.678);
+    color: rgb(0, 0, 0);
 
 }
 .menu {
