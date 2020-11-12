@@ -70,6 +70,9 @@ a ,a:visited {
 .fc {
     flex-direction: column;
 }
+.fw {
+    flex-wrap: wrap;
+}
 .jc{
     justify-content: center;
 }
@@ -371,13 +374,25 @@ button , a {
     flex: 1;
     margin: 1rem 0;
 }
+
+.user-card {
+    box-shadow:0 0 1px 1px rgb(198, 225, 250);
+
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.user-card .avatar{
+    margin-right: 1rem;
+}
 .tweet {
     padding: 0.5rem;
     border-bottom: 1px solid rgb(198, 225, 250);
 }
-
-.tweet .t-avatar{
+.t-avatar {
     width: 40px;
+}
+.tweet .t-avatar{
 
     margin : 0.5rem 1rem 0.5rem 0.5rem
 }

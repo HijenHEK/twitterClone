@@ -2,7 +2,7 @@
 
     <div class="nav-links f fc js mb1">
         <a class="nav-link" href="/tweets">Home</a>
-        <a class="nav-link" href="#">Explore</a>
+        <a class="nav-link" href="/explore">Explore</a>
         <a class="nav-link" href="#">Notification</a>
         <a class="nav-link" href="#">Messages</a>
         <a class="nav-link" href="#">Bookmarks</a>

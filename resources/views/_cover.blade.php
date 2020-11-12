@@ -36,7 +36,7 @@
                                 @csrf
                                 <button type="submit"
                                         class="btn user-btn {{Auth::user()->following($user) ? 'btn-tweet-red' : 'btn-tweet'}} ">
-                                        {{Auth::user()->following($user) ? 'Unfollow Me' : 'Follow Me'}}
+                                        {{Auth::user()->following($user) ? 'Unfollow' : 'Follow'}}
                                 </button>
                             </form>
 

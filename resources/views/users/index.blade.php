@@ -3,7 +3,6 @@
 <x-app>
 
 
-<section class="t-feed f fc ac ">
 
 
     @include('_cover')
@@ -17,7 +16,6 @@
     @include('_feed' , [
         'tweets' => $user->tweets()->latest()->get()
     ])
-</section>
 
 </x-app>
 

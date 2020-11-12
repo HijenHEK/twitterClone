@@ -2,7 +2,6 @@
 
 
 
-    <section class="t-feed f fc ac ">
 
 
     @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updateProfileInformation()))
@@ -18,5 +17,4 @@
     @endif --}}
 
 
-    </section>
 </x-app>

@@ -23,7 +23,7 @@ class TweetFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' =>  null,
+            'user_id' =>  User::all()->random(1)->first()->id,
             'body' => $this->faker->sentence,
         ];
     }
