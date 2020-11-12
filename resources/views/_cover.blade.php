@@ -18,7 +18,7 @@
                     </small>
                 </a>
 
-                <img class="user-avatar" src={{$user->profileAvatar}} />
+                <img class="user-avatar avatar" src={{$user->avatar}} />
 
                 <div class="user-param f ac je">
                     @if (Auth::user()->id == $user->id)

@@ -49,6 +49,10 @@ a ,a:visited {
 
 }
 
+.avatar {
+    border-radius: 100%;
+
+}
 
 .mt5 {
     margin-top: 5rem;
@@ -360,7 +364,7 @@ button , a {
 }
 
 .t-feed .group-footer img {
-    border-radius: 100%;
+    width: 40px;
 }
 
 .t-feed .feed {
@@ -374,7 +378,8 @@ button , a {
 }
 
 .tweet .t-avatar{
-    border-radius: 100%;
+    width: 40px;
+
     margin : 0.5rem 1rem 0.5rem 0.5rem
 }
 .tweet .t-content{
@@ -427,7 +432,7 @@ button , a {
 
 }
 .friend img {
-    border-radius: 100%;
+    width: 45px;
     margin-right: 0.7rem;
 }
 .friend a {
@@ -481,7 +486,7 @@ button , a {
 }
 
 .cover .cover-content .user-info .user-avatar{
-    border-radius: 100%;
+
     width: 120px;
     box-shadow: 0 0 2px 2px rgb(116, 155, 170);
 

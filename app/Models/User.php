@@ -21,6 +21,7 @@ class User extends Authenticatable
         'email',
         'uname',
         'password',
+        'avatar'
     ];
 
     /**
@@ -59,12 +60,10 @@ class User extends Authenticatable
         // return collect($tweets)->sortByDesc('created_at') ;
     }
 
-    public function getAvatarAttribute(){
-        return "https://i.pravatar.cc/40?u=" . $this->email ;
+    public function getAvatarAttribute($asset){
+        return asset('storage/'.$asset);
     }
-    public function getProfileAvatarAttribute(){
-        return "https://i.pravatar.cc/150?u=" . $this->email ;
-    }
+
     public function getCoverAttribute(){
         return "https://i.pravatar.cc/400?u=" . $this->email . 'x' ;
     }

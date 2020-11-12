@@ -24,6 +24,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => ['required', 'string', 'max:255'],
             'uname' => ['required', 'string', 'max:255' , 'alpha_dash', Rule::unique('users')->ignore($user)],
             'old_password' => ['required'],
+            'avatar' => ['dimensions:min_width=100,min_height=100','file','max:2048'],
             'email' => [
                 'required',
                 'string',
@@ -44,9 +45,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 } else {
                     $user->forceFill([
                         'name' => $input['name'],
+                        'avatar' => $input['avatar']->store('avatars'),
                         'uname' => $input['uname'],
                         'email' => $input['email'],
                     ])->save();
+
                 }
 
         } else {
@@ -68,6 +71,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         $user->forceFill([
             'name' => $input['name'],
+            'avatar' => $input['avatar']->store('avatars'),
+
             'uname' => $input['uname'],
             'email' => $input['email'],
             'email_verified_at' => null,
@@ -75,4 +80,5 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 
         // $user->sendEmailVerificationNotification();
     }
+
 }

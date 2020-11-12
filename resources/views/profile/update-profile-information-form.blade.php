@@ -1,4 +1,4 @@
-<form class="form tsm" method="POST" action="{{ route('user-profile-information.update') }}">
+<form class="form tsm" method="POST" action="{{ route('user-profile-information.update') }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
@@ -21,6 +21,7 @@
 
     </div>
     @enderror
+
     <div class="group f ac jb">
         <label class="label f1">{{ __('Name') }}</label>
         <input class="f1" type="text" name="name" value="{{ old('name') ?? auth()->user()->name }}" required autofocus autocomplete="name" />
@@ -31,6 +32,7 @@
 
     </div>
     @enderror
+
     <div class="group f ac jb">
         <label class="label f1">{{ __('Email') }}</label>
         <input class="f1" type="email" name="email" value="{{ old('email') ?? auth()->user()->email }}" required autofocus />
@@ -41,6 +43,19 @@
 
     </div>
     @enderror
+
+    <div  class="group f ac jb">
+        <label class="label f1">Avatar</label>
+        <input class="f1" type="file" name="avatar" />
+    </div>
+
+    @error('avatar')
+    <div class="group f ac jc">
+        <div class="error tc">{{ $message }}</div>
+
+    </div>
+    @enderror
+
     <div  class="group f ac jb">
         <label class="label f1">{{ __('Current Password') }}</label>
         <input class="f1" type="password" name="old_password" required autocomplete="odl_password" />

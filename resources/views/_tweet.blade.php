@@ -1,5 +1,5 @@
 <div class="tweet f as js">
-    <img class="t-avatar" src={{$tweet->user->avatar}} alt="">
+    <img class="t-avatar avatar" src={{$tweet->user->avatar}} alt="">
 
     <div class="t-content">
         <div class="name">

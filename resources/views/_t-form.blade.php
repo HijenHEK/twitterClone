@@ -4,7 +4,7 @@
         <textarea id="tweetInput" name="tweet" id="" placeholder="What's on your mind ?"></textarea>
     </div>
     <div class="group-footer f ac jb">
-        <img src={{Auth::user()->avatar}} alt="">
+        <img class="avatar" src={{Auth::user()->avatar}} alt="">
         <button class="btn btn-tweet" type="submit">Tweet it !</button>
     </div>
     @error('tweet')
