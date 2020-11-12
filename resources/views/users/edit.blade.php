@@ -1,20 +1,9 @@
 <x-app>
 
-    @if (session('status'))
-        <div>{{ session('status') }}</div>
-    @endif
 
-    <div>You are logged in!</div>
 
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
+    <section class="t-feed f fc ac ">
 
-        <button type="submit">
-            {{ __('Logout') }}
-        </button>
-    </form>
-
-    <hr>
 
     @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updateProfileInformation()))
         @include('profile.update-profile-information-form')
@@ -24,7 +13,10 @@
         @include('profile.update-password-form')
     @endif
 
-    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::twoFactorAuthentication()))
+    {{-- @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::twoFactorAuthentication()))
         @include('profile.two-factor-authentication-form')
-    @endif
+    @endif --}}
+
+
+    </section>
 </x-app>

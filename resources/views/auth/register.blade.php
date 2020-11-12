@@ -4,7 +4,7 @@
    <div class="container wf hf">
 
 
-        <form class="form c" method="POST" action="{{ route('register') }}">
+        <form class="form sign-form c" method="POST" action="{{ route('register') }}">
             @csrf
 
             <div class="group f jb ac">

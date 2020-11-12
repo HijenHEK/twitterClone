@@ -9,7 +9,7 @@
 
 
 
-        <form class="form c" method="POST" action="{{ route('login') }}">
+        <form class="form sign-form c" method="POST" action="{{ route('login') }}">
             @csrf
 
             <div class="group f ac jb">

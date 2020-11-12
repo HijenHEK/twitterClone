@@ -1,27 +1,36 @@
-<form method="POST" action="{{ route('user-password.update') }}">
+<form class="form " method="POST" action="{{ route('user-password.update') }}">
     @csrf
     @method('PUT')
 
-    <div>
-        <label>{{ __('Current Password') }}</label>
-        <input type="password" name="current_password" required autocomplete="current-password" />
+    <div  class="group f ac jb">
+        <label class="label f1">{{ __('Current Password') }}</label>
+        <input class="f1" type="password" name="current_password" required autocomplete="current-password" />
     </div>
 
-    <div>
-        <label>{{ __('Password') }}</label>
-        <input type="password" name="password" required autocomplete="new-password" />
+    <div class="group f ac jb">
+        <label class="label f1">{{ __('Password') }}</label>
+        <input class="f1" type="password" name="password" required autocomplete="new-password" />
     </div>
 
-    <div>
-        <label>{{ __('Confirm Password') }}</label>
-        <input type="password" name="password_confirmation" required autocomplete="new-password" />
+    <div class="group f ac jb">
+        <label class="label f1">{{ __('Confirm Password') }}</label>
+        <input class="f1" type="password" name="password_confirmation" required autocomplete="new-password" />
     </div>
 
-    <div>
-        <button type="submit">
+    <div class="group f ac jb">
+        <button class="btn btn-auth" type="submit">
             {{ __('Save') }}
         </button>
     </div>
+
+    @if ($errors->any())
+            <div class="errors c">
+                <ul class=" errors-list">
+                    @foreach ($errors->all() as $error)
+                        <li class="errors-item tc" >{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 </form>
 
-<hr>

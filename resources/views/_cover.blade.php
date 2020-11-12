@@ -21,7 +21,7 @@
                 <img class="user-avatar" src={{$user->profileAvatar}} />
 
                 <div class="user-param f ac je">
-                    @if
+                    @if (Auth::user()->id == $user->id)
                         <button class="btn user-btn btn-grey">
                             <a href="{{$user->path('edit')}}">
                                 Edit
