@@ -16,6 +16,12 @@ class UserController extends Controller
             'user' => $user
         ]);
     }
-
+    public function edit(User $user)
+    {
+        $this->authorize('edit',$user) ;
+        return view('users.edit' , [
+            'user' => $user
+        ]);
+    }
 
 }

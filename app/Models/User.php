@@ -73,5 +73,8 @@ class User extends Authenticatable
         return $this->hasMany(Tweet::class);
     }
 
-
+    public function path($a = '') {
+        $p = Route('profile' , $this);
+        return $a ? $p.'/'.$a : $p ;
+    }
 }

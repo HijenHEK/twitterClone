@@ -9,7 +9,7 @@
         <div class="cover-content f fc ac">
             <div class="user-info f ae jb">
 
-                <a class="user-name f fc" href="/users/{{$user->uname}}">
+                <a class="user-name f fc" href="{{$user->path()}}">
 
                     <div>{{$user->name}}</div>
 
@@ -21,9 +21,9 @@
                 <img class="user-avatar" src={{$user->profileAvatar}} />
 
                 <div class="user-param f ac je">
-                    @if (Auth::user()->id == $user->id)
+                    @if
                         <button class="btn user-btn btn-grey">
-                            <a href="/users/edit">
+                            <a href="{{$user->path('edit')}}">
                                 Edit
                             </a>
                         </button>
@@ -32,7 +32,7 @@
 
 
 
-                            <form action="/follow/{{$user->id}}" method="post">
+                            <form action="{{$user->path('follow')}}" method="post">
                                 @csrf
                                 <button type="submit"
                                         class="btn user-btn {{Auth::user()->following($user) ? 'btn-tweet-red' : 'btn-tweet'}} ">

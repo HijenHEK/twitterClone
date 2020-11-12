@@ -5,7 +5,7 @@
 
         <div class="friend">
             <img src={{$user->avatar}} width="35px" alt="" srcset="">
-        <a href="/users/{{$user->uname}}">{{$user->name}}</a>
+        <a href="{{$user->path()}}">{{$user->name}}</a>
         </div>
 
         @empty
