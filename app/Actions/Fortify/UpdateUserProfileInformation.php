@@ -45,7 +45,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 } else {
                     $user->forceFill([
                         'name' => $input['name'],
-                        'avatar' => $input['avatar']->store('avatars'),
+                        'avatar' => $input['avatar'] ? $input['avatar']->store('avatars') : $user->avatar(),
                         'uname' => $input['uname'],
                         'email' => $input['email'],
                     ])->save();
@@ -71,7 +71,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         $user->forceFill([
             'name' => $input['name'],
-            'avatar' => $input['avatar']->store('avatars'),
+            'avatar' => $input['avatar'] ? $input['avatar']->store('avatars') : $user->avatar(),
 
             'uname' => $input['uname'],
             'email' => $input['email'],
