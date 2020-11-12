@@ -13,9 +13,7 @@
         @endif
     @endauth
 
-    @include('_feed' , [
-        'tweets' => $user->tweets()->latest()->get()
-    ])
+    @include('_feed')
 
 </x-app>
 

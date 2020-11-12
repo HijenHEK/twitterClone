@@ -13,7 +13,8 @@ class UserController extends Controller
     public function show(User $user)
     {
         return view('users.index' , [
-            'user' => $user
+            'user' => $user,
+            'tweets' => $user->tweets()->latest()->paginate(10)
         ]);
     }
     public function edit(User $user)

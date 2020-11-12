@@ -54,7 +54,7 @@ class User extends Authenticatable
         return Tweet::whereIn('user_id', $following)
                     ->orWhere('user_id', $this->id)
                     ->latest()
-                    ->get();
+                    ->paginate(10);
 
         // $tweets = [...$this->followingTweets() , ...$this->tweets] ;
         // return collect($tweets)->sortByDesc('created_at') ;

@@ -3,7 +3,6 @@
 
 
     <div class="explore f fc jc">
-
         @foreach ($users as $user)
             <div class="user-card f1 f ac jb">
                     <div class="f ac js">
@@ -28,6 +27,7 @@
             </div>
         @endforeach
 
+            {{ $users->links() }}
     </div>
 
 </x-app>

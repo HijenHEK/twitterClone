@@ -422,6 +422,7 @@ button , a {
 .tweet .t-content .react .like{
 }
 .t-friends {
+    max-width: 200px;
     min-width: 185px;
     background-color: #F6F7FA;
     border-radius: 5px;
@@ -440,7 +441,6 @@ button , a {
     align-items: center;
     border-radius: 20px;
     cursor: pointer;
-    max-width: 185px;
 }
 .friend:hover {
     background-color: #d3d5dc;
@@ -450,17 +450,14 @@ button , a {
     width: 45px;
     margin-right: 0.7rem;
 }
-.friend .name {
+.friend a {
     color: rgb(26, 26, 26);
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 .friend:hover a {
     color: rgba(26, 26, 26, 0.678);
 
-}
-.friend .avatar{
-    width: 35px;
 }
 .menu {
     display: none;
@@ -541,6 +538,56 @@ button , a {
     font-size: 0.85rem;
     text-align: center;
 }
+
+
+
+/***** pagination ******/
+nav.pagination {
+    padding: 0.5rem;
+}
+nav.pagination  .item ,nav.pagination  .link{
+    padding: 0.5rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+
+}
+nav.pagination  .item {
+    color:  rgb(209, 209, 209) ;
+    border : 2px solid rgb(209, 209, 209);
+
+}
+nav.pagination  .link{
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+    border : 2px solid rgb(112, 112, 112);
+
+}
+nav.pagination  .link:hover{
+    color: rgb(0, 0, 0) ;
+}
+nav.pagination  .link:focus{
+    outline: none;
+    box-shadow: 0 0 1px 1px rgb(88, 160, 255);
+}
+
+nav.pagination  .link:active{
+    color: rgb(0, 0, 0);
+    background-color: rgb(121, 121, 121);
+    transition: all 0.15s ease-in-out;
+}
+
+nav.pagination  .info{
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
+
+}
+
+
+.hidden {
+    display: none;
+
+}
+
 
 
 @media (max-width : 820px) {

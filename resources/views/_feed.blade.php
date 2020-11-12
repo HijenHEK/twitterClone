@@ -7,6 +7,7 @@
         @endforeach
 
 
+        {{$tweets->links()}}
 
 
     </div>

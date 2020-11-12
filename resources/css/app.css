@@ -538,6 +538,56 @@ button , a {
 }
 
 
+
+/***** pagination ******/
+nav.pagination {
+    padding: 0.5rem;
+}
+nav.pagination  .item ,nav.pagination  .link{
+    padding: 0.5rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+
+}
+nav.pagination  .item {
+    color:  rgb(209, 209, 209) ;
+    border : 2px solid rgb(209, 209, 209);
+
+}
+nav.pagination  .link{
+    color: rgb(82, 82, 82);
+    font-weight: 500;
+    border : 2px solid rgb(112, 112, 112);
+
+}
+nav.pagination  .link:hover{
+    color: rgb(0, 0, 0) ;
+}
+nav.pagination  .link:focus{
+    outline: none;
+    box-shadow: 0 0 1px 1px rgb(88, 160, 255);
+}
+
+nav.pagination  .link:active{
+    color: rgb(0, 0, 0);
+    background-color: rgb(121, 121, 121);
+    transition: all 0.15s ease-in-out;
+}
+
+nav.pagination  .info{
+    font-size: 0.8rem;
+    color: rgb(82, 82, 82);
+
+}
+
+
+.hidden {
+    display: none;
+
+}
+
+
+
 @media (max-width : 820px) {
     .t-header {
         /* padding: unset; */

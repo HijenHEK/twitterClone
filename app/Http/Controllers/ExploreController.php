@@ -12,7 +12,7 @@ class ExploreController extends Controller
 
     public function index() {
         return view('explore.index',[
-            'users' => User::paginate(20)->except(Auth::user()->id)
+            'users' => User::where('id','<>',Auth::user()->id)->paginate(20)
         ]);
     }
 }
