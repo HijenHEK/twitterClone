@@ -3,6 +3,9 @@
 namespace App\Traits;
 
 use App\Models\User;
+use App\Notifications\FollowNotififcation;
+
+use Illuminate\Notifications\Notifiable;
 
 trait Followable
 {
@@ -14,7 +17,7 @@ trait Followable
        return $this->follows()->where('id' , $user->id)->exists();
     }
     public function follow(User $user) {
-        $this->follows()->save($user);
+        $this->follows()->save($user) ;
     }
     public function unfollow(User $user) {
         $this->follows()->detach($user);
