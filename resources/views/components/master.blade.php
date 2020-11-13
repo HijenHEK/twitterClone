@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/fontawesome.css')}}">
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <script src="{{asset('js/app.js')}}"></script>
+
 </head>
 
 <body>
@@ -25,7 +27,6 @@
 
 
     </div>
-    <script src="{{asset('js/app.js')}}"></script>
 </body>
 
 </html>
