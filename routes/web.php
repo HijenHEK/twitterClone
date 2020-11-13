@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ExploreController;
 use App\Http\Controllers\FollowController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\TweetController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
@@ -33,5 +34,8 @@ Route::middleware(['auth'])->group( function () {
     Route::get('users/{user:uname}/edit',[UserController::class,'edit'])->middleware('can:edit,user');
     Route::put('users/{user:uname}/edit',[UserController::class,'update'])->middleware('can:edit,user');
     Route::post('users/{user:uname}/follow',[FollowController::class,'store']);
+    Route::post('tweets/{tweet}/like',[LikeController::class,'store']);
+    Route::post('tweets/{tweet}/dislike',[LikeController::class,'destory']);
+
 });
 

@@ -17,8 +17,21 @@
 
         </div> --}}
         <div class="react">
+        <form action="/tweets/{{$tweet->id}}/like" method="post">
+            @csrf
+            <button type="submit">
             <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
+            {{$tweet->likesCount()}}
+        </button>
+        </form>
+        <form action="/tweets/{{$tweet->id}}/dislike" method="post">
+            @csrf
+            <button type="submit">
             <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
-        </div>
+            {{$tweet->likesCount(false)}}
+
+        </button>
+        </form>
+    </div>
     </div>
 </div>
