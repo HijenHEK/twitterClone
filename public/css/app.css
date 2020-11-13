@@ -419,7 +419,33 @@ button , a {
     box-shadow: 0 0 2px 1px rgb(173, 197, 208);
 }
 
-.tweet .t-content .react .like{
+.tweet .t-content .react form button{
+
+    margin: 0 0.4rem;
+    color: rgb(121, 121, 121);
+}
+.tweet .t-content .react form button>i{
+    border-radius: 100%;
+    margin: 0 0.05rem;
+    box-shadow: 0 0 2px 2px inherit;
+}
+.tweet .t-content .react form button.like{
+    color: rgb(54, 109, 181);
+
+}
+.tweet .t-content .react form button.like i{
+    background-color: rgba(125, 170, 230, 0.849);
+    box-shadow: 0 0 1px 4px rgba(173, 197, 230, 0.85);
+
+}
+.tweet .t-content .react form button.dislike{
+    color: rgb(177, 55, 55);
+}
+
+.tweet .t-content .react form button.dislike i{
+    background-color:rgba(224, 127, 127, 0.849);
+    box-shadow: 0 0 1px 4px rgba(223, 171, 171, 0.815);
+
 }
 .t-friends {
     max-width: 200px;

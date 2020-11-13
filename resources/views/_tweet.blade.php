@@ -13,25 +13,25 @@
             {{$tweet->body}}
         </div>
         {{-- <div class="t-img f ac js">
-            <img src={{$tweet->image}}  width="100%" alt="">
+            <img src={{$tweet->image}} width="100%" alt="">
 
-        </div> --}}
-        <div class="react">
+    </div> --}}
+    <div class="react f ac">
         <form action="/tweets/{{$tweet->id}}/like" method="post">
             @csrf
-            <button type="submit">
-            <img class="like" src="{{asset('assets/like.svg')}}" width="20px" alt="" srcset="">
-            {{$tweet->likesCount()}}
-        </button>
+        <button type="submit" class={{$tweet->liked(Auth::user()) ? 'like' : ''}}>
+            <i class="fa fa-thumbs-up "></i>
+                <span>{{$tweet->likesCount() ?: ''}}</span>
+
+            </button>
         </form>
         <form action="/tweets/{{$tweet->id}}/dislike" method="post">
             @csrf
-            <button type="submit">
-            <img class="dislike" src="{{asset('assets/dislike.svg')}}" width="20px" alt="" srcset="">
-            {{$tweet->likesCount(false)}}
-
-        </button>
+            <button type="submit" class={{$tweet->liked(Auth::user(),false) ? 'dislike' :''}}>
+                <i class="fa fa-thumbs-down"></i>
+                <span>{{$tweet->likesCount(false) ?: ''}} </span>
+            </button>
         </form>
     </div>
-    </div>
+</div>
 </div>
