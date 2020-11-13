@@ -6,7 +6,7 @@
             <img class="avatar" src={{$user->avatar}} width="35px" alt="" srcset="">
             <div class="name">
 
-            {{$user->name}}
+                {{$user->name}}
             </div>
         </a>
         @empty
