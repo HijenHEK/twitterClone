@@ -3,6 +3,12 @@
     <div class="nav-links f fc js mb1">
         <a class="nav-link" href="/tweets">Home</a>
         <a class="nav-link" href="/explore">Explore</a>
+    <a class="nav-link" href="/notifications">
+        <span>Notifications</span>
+        <span class="notifications-count">
+            {{Auth::user()->unreadNotifications->count() ?: ''}}
+        </span>
+    </a>
 
         <a class="nav-link" href="/users/{{Auth::user()->uname}}">Profile</a>
 
