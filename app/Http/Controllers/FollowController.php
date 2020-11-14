@@ -12,11 +12,19 @@ class FollowController extends Controller
 
     public function store(User $user)
     {
-        Auth::user()->follows()->toggle($user);
 
-        if(Auth::user()->following($user)){
-            $user->notify(new FollowNotififcation(Auth::user()));
+
+
+
+        if(Auth::user()->follows()->toggle($user)) {
+            if(Auth::user()->following($user)){
+                $user->notify(new FollowNotififcation(Auth::user()));
+            }else{
+                $user->unreadNotifications()->where("data->followerid"  , Auth::user()->id)->delete();
+            }
         }
+
+
         return back();
     }
 

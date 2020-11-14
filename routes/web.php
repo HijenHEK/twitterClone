@@ -32,6 +32,7 @@ Route::middleware(['auth'])->group( function () {
     Route::get('tweets',[TweetController::class,'index'])->name('home');
     Route::get('explore',[ExploreController::class,'index'])->name('explore');
     Route::get('notifications',[NotificationController::class,'index'])->name('notif');
+    Route::post('notifications/{notification}',[NotificationController::class,'update'])->name('markAsRead');
     Route::get('users/{user:uname}',[UserController::class,'show'])->name('profile');
     Route::get('users/{user:uname}/edit',[UserController::class,'edit'])->middleware('can:edit,user');
     Route::put('users/{user:uname}/edit',[UserController::class,'update'])->middleware('can:edit,user');

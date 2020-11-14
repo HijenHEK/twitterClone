@@ -12,6 +12,8 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+
+
         return view('users.index' , [
             'user' => $user,
             'tweets' => $user->tweets()->latest()->paginate(10)

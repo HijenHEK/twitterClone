@@ -4,72 +4,55 @@
 
     <div class="notification f fc jc">
 
+        <div class="unread">
+            @foreach (Auth::user()->unreadNotifications->sortByDesc('created_at') as $notif)
 
-        @foreach (Auth::user()->unreadNotifications as $notif)
+            @if($notif->type == 'App\Notifications\FollowNotififcation')
 
-
-
-
-                    {{-- <div class="f ac js">
-
-                        <img class="t-avatar avatar" src={{$user->avatar}} alt="">
-
-                            <a href="/users/{{$user->uname}}">
-                                {{$user->name}}
-                                <small>{{'@'.$user->uname}}</small>
-                            </a>
-
-                    </div> --}}
+            <form class="f jst ac" action="/notifications/{{$notif->id}}" method="post">
+                @csrf
+                <button type="submit" class="f1">
+                    <div class="notification-card unread  f ac js">
 
 
-                @if($notif->type == 'App\Notifications\FollowNotififcation')
-
-                <a href="/users/{{$notif->data['follower']['uname']}}">
-
-                <div class="notification-card unread f1 f ac js">
-
-
-                            {{$notif->data['follower']['name'] }}
-                            Followed you
+                        {{$notif->data['follower'] }}
+                        Followed you
                         <small>
                             &nbsp;
-                            {{\Carbon\Carbon::parse($notif->data['follower']['created_at'])->diffForhumans()}}
+                            {{$notif->created_at->diffForHumans()}}
                         </small>
-                </div>
-            </a>
+                    </div>
+                </button>
+            </form>
 
-                    {{-- <form action="{{$user->path('follow')}}" method="post">
-                        @csrf
-                        <button type="submit"
-                                class="btn user-btn {{Auth::user()->following($user) ? 'btn-tweet-red' : 'btn-tweet'}} ">
-                                {{Auth::user()->following($user) ? 'Unfollow' : 'Follow'}}
-                        </button>
-                    </form> --}}
+            @endif
+
+        @endforeach
+        </div>
+
+
+            <div class="read">
+                @foreach (Auth::user()->readNotifications->sortByDesc('read_at'); as $notif)
+                @if($notif->type == 'App\Notifications\FollowNotififcation')
+
+                <div class="notification-card read f1 f ac js">
+
+
+                    {{$notif->data['follower'] }}
+                    Followed you
+                    <small>
+                        &nbsp;
+                        {{$notif->created_at->diffForHumans()}}
+                    </small>
+                </div>
+
                 @endif
 
-
-                        {{-- <form action="{{$user->path('follow')}}" method="post">
-                            @csrf
-                            <button type="submit"
-                                    class="btn user-btn {{Auth::user()->following($user) ? 'btn-tweet-red' : 'btn-tweet'}} ">
-                                    {{Auth::user()->following($user) ? 'Unfollow' : 'Follow'}}
-                            </button>
-                        </form> --}}
+            @endforeach
+            </div>
 
 
-
-        @endforeach
-
-        @foreach (Auth::user()->readNotifications as $notif)
-        @if($notif->type == 'App\Notifications\FollowNotififcation')
-
-        {{$notif}}
-
-    @endif
-
-        @endforeach
-
-            {{-- {{ $users->links() }} --}}
+        {{-- {{ $users->links() }} --}}
     </div>
 
 

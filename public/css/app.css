@@ -618,7 +618,9 @@ nav.pagination  .info{
 }
 
 .notification-card.read {
-    box-shadow:0 0 1px 1px rgb(198, 225, 250);
+    background-color:rgb(228, 241, 253);
+    box-shadow:0 0 1px 1px rgb(228, 240, 252);
+    color: rgb(155, 155, 155);
     margin: 0.5rem;
     padding: 0.5rem;
 }

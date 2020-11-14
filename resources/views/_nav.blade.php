@@ -5,9 +5,11 @@
         <a class="nav-link" href="/explore">Explore</a>
     <a class="nav-link" href="/notifications">
         <span>Notifications</span>
-        <span class="notifications-count">
-            {{Auth::user()->unreadNotifications->count() ?: ''}}
-        </span>
+        @if($count = Auth::user()->unreadNotifications->count())
+            <span class="notifications-count">
+                {{$count}}
+            </span>
+        @endif
     </a>
 
         <a class="nav-link" href="/users/{{Auth::user()->uname}}">Profile</a>

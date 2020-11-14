@@ -60,7 +60,11 @@ class FollowNotififcation extends Notification implements ShouldQueue
     {
         return [
 
-            'follower' => $this->follower
+            'follower' => $this->follower->name ,
+            'followerid' => $this->follower->id ,
+            // 'created' => $this->created_at->diffForHumans() ,
+            // 'read' => $this->created_at->diffForHumans() ,
+            'link' => '/users/'.$this->follower->uname
 
         ];
     }
