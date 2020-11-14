@@ -130,6 +130,16 @@ Turbolinks.start();
 window.addEventListener('load', function () {
   var e = document.querySelector("#menu-toggler");
   var t = document.querySelector('#tweetBtn');
+  var tweetFilesUp = document.querySelector('.files .fa-files');
+  var tweetFilesCount = document.querySelector('.files .files-count');
+  var tweetFilesTrash = document.querySelector('.files .fa-trash');
+
+  var toggleInputStyle = function toggleInputStyle() {
+    console.log('run');
+    tweetFilesUp.parentElement.classList.toggle('contain');
+    tweetFilesTrash.classList.toggle('hidden');
+    tweetFilesCount.classList.toggle('hidden');
+  };
 
   if (e) {
     e.addEventListener("click", function () {
@@ -144,6 +154,18 @@ window.addEventListener('load', function () {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 
       document.querySelector("#tweetInput").focus();
+    });
+  }
+
+  if (tweetFilesUp && tweetFilesCount) {
+    tweetFilesUp.addEventListener('change', function () {
+      var c = tweetFilesUp.files.length;
+      tweetFilesCount.textContent = c;
+      toggleInputStyle();
+    });
+    tweetFilesTrash.addEventListener('click', function () {
+      tweetFilesUp.value = null;
+      toggleInputStyle();
     });
   }
 });

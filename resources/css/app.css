@@ -636,6 +636,52 @@ nav.pagination  .info{
     background-color: rgb(57,196,249);
 }
 
+input{
+    display: relative;
+}
+
+
+
+.files {
+    color: rgb(155, 155, 155);
+    margin-right: 0.5rem;
+}
+.files:hover {
+    color: rgb(112, 112, 112);
+
+}
+.files .files-count {
+    font-size: 0.9rem;
+}
+.files .fa-trash {
+    color: red;
+    cursor: pointer;
+
+
+}
+
+.hidden {
+    display: none !important;
+}
+
+.files .fa-files {
+    width: 1.5rem;
+    overflow: hidden;
+    
+    cursor: pointer;
+}
+.files.contain{
+    color : rgb(138, 198, 255)
+}
+.files.contain:hover{
+    color : rgb(107, 183, 253)
+}
+input.fa-files::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+
+
 @media (max-width : 820px) {
     .t-header {
         /* padding: unset; */
