@@ -146,7 +146,7 @@ a ,a:visited {
 
 .errors {
     width: 400px;
-    margin: 0.5rem 0;
+    margin-top: 0.5rem;
 }
 .error{
     color: rgb(218, 60, 60);
