@@ -398,9 +398,12 @@ button , a {
     margin : 0.5rem 1rem 0.5rem 0.5rem
 }
 .tweet .t-content{
-    width: 100%;
     padding-top: 1rem;
     padding-right: 1rem;
+    overflow: hidden;
+    max-width: 500px;
+    position: relative;
+
 }
 .tweet .t-content .name{
     font-size: 0.9rem;
@@ -411,14 +414,59 @@ button , a {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
 }
-.tweet .t-content .t-img{
-    max-height: 200px;
-    overflow: hidden;
+.tweet .t-content .t-images{
+    max-height: 250px;
     margin-bottom: 1rem;
     border-radius: 10px;
+    background-color: rgb(223, 231, 235);
     box-shadow: 0 0 2px 1px rgb(173, 197, 208);
+    /* overflow: hidden; */
+    flex-wrap: nowrap;
+    /* flex-basis: 100%; */
+    /* width: 100%; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    
 }
 
+.tweet .t-content .t-images .fa-arrow-left ,
+.tweet .t-content .t-images .fa-arrow-right  {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    background-color: rgb(212, 232, 253);
+    padding: 0.5rem;
+    border-radius: 100%;
+    opacity: 0.9;
+    cursor: pointer;
+}
+.tweet .t-content .t-images .fa-arrow-left:hover ,
+.tweet .t-content .t-images .fa-arrow-right:hover  {
+    
+    background-color: rgb(142, 196, 255);
+    opacity: 1;
+}
+.tweet .t-content .t-images .fa-arrow-left  {
+    
+    left: 0.2rem;
+   
+}
+.tweet .t-content .t-images .fa-arrow-right  {
+    right: 1rem;
+}
+.tweet .t-content .t-images .image{
+    background-color: rgb(166, 211, 252);
+    box-shadow: 0 0 2px 1px rgb(166, 211, 252);
+    width: 100%;
+    overflow: hidden;
+    min-width: 100%;
+    
+    
+}
+.tweet .t-content .t-images .image img{
+    width: 100%;
+}
 .tweet .t-content .react form button{
 
     margin: 0 0.4rem;
@@ -612,6 +660,8 @@ nav.pagination  .info{
 
 }
 .notifications {
+
+
 
 }
 

@@ -16,11 +16,21 @@ class Tweet extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class); 
     }
 
     public function getImageAttribute(){
-        return "https://i.pravatar.cc/250?img=" . $this->id ;
+        $images = [] ;
+        $data = json_decode($this->images) ;
+        if($data && is_array($data)){
+
+            foreach($data  as $img) {
+                $images[] = (asset('/storage/' . $img));
+            } 
+
+        }
+        
+        return $images ;
 
     }
     public function likes(){

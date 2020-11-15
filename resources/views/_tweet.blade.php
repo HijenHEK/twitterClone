@@ -12,10 +12,19 @@
         <div class="body">
             {{$tweet->body}}
         </div>
-        {{-- <div class="t-img f ac js">
-            <img src={{$tweet->image}} width="100%" alt="">
+        @if ($images = $tweet->image)
+            <div class="t-images f fw">
+                <i id="slide-backward" class="fa fa-arrow-left ">  </i>
+                @foreach ($images as $image)
+                    <span class="image  f ac jc">
+                        <img class="img" src={{$image}} alt="">
+                    </span>
+                @endforeach
+                <i id="slide-forward" class="fa fa-arrow-right"></i>
 
-    </div> --}}
+            </div>
+        @endif
+       
     <div class="react f ac">
         <form action="/tweets/{{$tweet->id}}/like" method="post">
             @csrf

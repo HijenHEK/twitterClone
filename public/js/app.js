@@ -130,6 +130,8 @@ Turbolinks.start();
 window.addEventListener('load', function () {
   var e = document.querySelector("#menu-toggler");
   var t = document.querySelector('#tweetBtn');
+  var slideBackward = document.querySelector('#slide-backward');
+  var slideForward = document.querySelector('#slide-forward');
   var tweetFilesUp = document.querySelector('.files .fa-files');
   var tweetFilesCount = document.querySelector('.files .files-count');
   var tweetFilesTrash = document.querySelector('.files .fa-trash');
@@ -166,6 +168,31 @@ window.addEventListener('load', function () {
     tweetFilesTrash.addEventListener('click', function () {
       tweetFilesUp.value = null;
       toggleInputStyle();
+    });
+  }
+
+  if (slideForward && slideBackward) {
+    var w = slideBackward.parentElement.offsetWidth;
+    slideForward.addEventListener('click', function () {
+      slideForward.parentElement.scrollLeft += w;
+    });
+    slideBackward.addEventListener('click', function () {
+      slideBackward.parentElement.scrollLeft -= w;
+    });
+    slideForward.parentElement.addEventListener('scroll', function () {
+      console.log(slideForward.parentElement.scrollLeft);
+
+      if (slideForward.parentElement.scrollLeft == 0) {
+        slideBackward.classList.add('hidden');
+      } else {
+        slideBackward.classList.remove('hidden');
+      }
+
+      if (slideForward.parentElement.scrollLeft == slideForward.parentElement.scrollWidth) {
+        slideForward.classList.add('hidden');
+      } else {
+        slideForward.classList.remove('hidden');
+      }
     });
   }
 });
