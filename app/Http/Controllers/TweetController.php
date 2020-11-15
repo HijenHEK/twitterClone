@@ -13,13 +13,41 @@ class TweetController extends Controller
 
     public  function store()
     {
+
+
+        if(Request('tweet') === Request('images')) {
+            
+            return back()->withErrors(['empty' => 'You cannot tweet nothing !']) ;
+
+        }
+
         Request()->validate([
-            'tweet' => 'required|max:255'
+            'tweet' => 'max:255',
+            'images.*' => 'mimes:jpeg,png,gif,jpg,bitmap'
         ]);
-        Tweet::create([
+        $tweet = Tweet::create([
             'user_id' => Auth::user()->id ,
-            'body' => request('tweet')
+            'body' => request('tweet') , 
         ]);
+        
+
+        $files = [] ;
+
+        if(Request()->hasfile('images'))
+        {
+            foreach(Request()->file('images') as $file)
+            {
+                $name = $file->store('images/'.Auth::user()->uname . '/' . $tweet->id);
+                
+                $files[] = $name;  
+
+            }
+        }
+        $tweet->update([
+            "images" => $files ,
+        ]);
+        
+
         return back() ;
     }
     public  function index()

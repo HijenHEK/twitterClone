@@ -10,17 +10,18 @@
             <div class="files">
                 <span class=" hidden fa fa-trash fa-xs "></span>
                 <span class=" hidden files-count"></span>
-                <input accept="image/*,.pdf" type="file" name="images" class="fa fa-images fa-files fa-lg" multiple>
+                <input type="file" name="images[]" class="fa fa-images fa-files fa-lg" multiple  />
             </div>
             <button class="btn btn-tweet" type="submit">Tweet it !</button>
     </div>
 
     </div>
-    @error('tweet')
+    @if ($errors->any())
         <div class="errors">
-           <div class="error">
-            {{$message}}
-            </div>
+                @foreach ($errors->all() as $error)
+                    <div class="error">{{ $error }}</div>
+                @endforeach
         </div>
-    @enderror
+    @endif
+ 
 </form>
