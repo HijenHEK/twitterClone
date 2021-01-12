@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        \App\Models\User::factory(20)->create();
+        \App\Models\Tweet::factory(50)->create(['user_id' => rand(1, 19)]);
     }
 }

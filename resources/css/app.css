@@ -424,7 +424,7 @@ button , a {
     flex-wrap: nowrap;
     /* flex-basis: 100%; */
     /* width: 100%; */
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     scroll-behavior: smooth;
     
@@ -717,7 +717,6 @@ input{
 .files .fa-files {
     width: 1.5rem;
     overflow: hidden;
-    
     cursor: pointer;
 }
 .files.contain{
@@ -729,6 +728,7 @@ input{
 input.fa-files::-webkit-file-upload-button {
     visibility: hidden;
 }
+
 
 
 

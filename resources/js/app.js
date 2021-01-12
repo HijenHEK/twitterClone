@@ -6,8 +6,8 @@ Turbolinks.start();
 window.addEventListener('load', function () {
     var e = document.querySelector("#menu-toggler");
     var t = document.querySelector('#tweetBtn');
-    var slideBackward = document.querySelector('#slide-backward');
-    var slideForward = document.querySelector('#slide-forward');
+    var slideBackward = document.querySelectorAll('.slide-backward');
+    var slideForward = document.querySelectorAll('.slide-forward');
 
     var tweetFilesUp = document.querySelector('.files .fa-files') ;
     var tweetFilesCount = document.querySelector('.files .files-count') ;
@@ -53,34 +53,34 @@ window.addEventListener('load', function () {
 
     }
 
-    if ( slideForward  && slideBackward) {
-        var w = slideBackward.parentElement.offsetWidth;
 
-        slideForward.addEventListener('click',()=>{
-            slideForward.parentElement.scrollLeft += w ;
-          
-        });
-        slideBackward.addEventListener('click',()=>{
-            slideBackward.parentElement.scrollLeft -= w ;
+    
+    if ( slideForward  && slideBackward) {
+
+        slideBackward.forEach((e) =>{
+            let w = e.parentElement.offsetWidth;
+            e.addEventListener('click',()=>{
+                e.parentElement.scrollLeft -= w ;
+                if(e.parentElement.scrollLeft < e.parentElement.clientWidth){
+                    e.classList.add('hidden');
+                }
+            });
             
         });
-        slideForward.parentElement.addEventListener('scroll', ()=>{
-            console.log(slideForward.parentElement.scrollLeft);
-            if(slideForward.parentElement.scrollLeft == 0) {
-                slideBackward.classList.add('hidden');
+        
 
-            }else{
-                slideBackward.classList.remove('hidden');
+        
+        slideForward.forEach((e)=>{
+            let w = e.parentElement.offsetWidth;
 
-            }
-            if(slideForward.parentElement.scrollLeft == slideForward.parentElement.scrollWidth) {
-                slideForward.classList.add('hidden');
-
-            }else {
-                slideForward.classList.remove('hidden');
-
-            }
-        })
+            e.addEventListener('click',()=>{
+                e.parentElement.scrollLeft += w ;
+                if(e.parentElement.scrollLeft > e.parentElement.scrollWidth - e.parentElement.clientWidth ){
+                    e.classList.add('hidden');
+                }
+            });
+        });
+        
     }
 
 

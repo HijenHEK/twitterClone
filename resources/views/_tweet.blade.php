@@ -14,13 +14,16 @@
         </div>
         @if ($images = $tweet->image)
             <div class="t-images f fw">
-                <i id="slide-backward" class="fa fa-arrow-left ">  </i>
+                @if (count($images)>1)
+                <i id="slide-backward" class="fa fa-arrow-left slide-backward ">  </i>
+                <i id="slide-forward" class="fa fa-arrow-right slide-forward"></i>
+
+                @endif
                 @foreach ($images as $image)
                     <span class="image  f ac jc">
                         <img class="img" src={{$image}} alt="">
                     </span>
                 @endforeach
-                <i id="slide-forward" class="fa fa-arrow-right"></i>
 
             </div>
         @endif
